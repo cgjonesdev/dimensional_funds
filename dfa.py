@@ -1,8 +1,9 @@
 import string
 
 temp = dict(zip(string.letters[:26], range(1,27)))
-temp.update(dict(zip(string.punctuation, [int(a[0]) for a in
-										  zip('0'*len(string.punctuation))])))
+temp.update(
+	dict(zip(string.punctuation,
+	[int(a[0]) for a in zip('0'*len(string.punctuation))])))
 temp.update({' ':0})
 
 result = sorted([(len(a), a) for a in [a[:-1] for a in open(
